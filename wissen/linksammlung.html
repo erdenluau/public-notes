@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Linksammlung</title>
+<style>
+  :root {
+    --bg:      #0f1115;
+    --surface: #171a21;
+    --line:    #262b36;
+    --text:    #d6dbe4;
+    --muted:   #7c8598;
+    --accent:  #5ac8a8;
+    --lan:     #e0a23c;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7f9; --surface:#ffffff; --line:#e2e6ec;
+      --text:#1c2128; --muted:#5b6472; --accent:#0f9d76; --lan:#b4741a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1rem 4rem;
+    background: var(--bg); color: var(--text);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  header { margin-bottom: 1.5rem; }
+  h1 {
+    font: 600 1.35rem/1.2 var(--mono);
+    margin: 0 0 .25rem; letter-spacing: -.01em;
+  }
+  h1::before { content: "// "; color: var(--accent); }
+  .meta { color: var(--muted); font: 400 .8rem/1.4 var(--mono); }
+  #q {
+    width: 100%; margin: 1rem 0 .25rem; padding: .6rem .8rem;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+    color: var(--text); font: 400 .9rem var(--mono);
+  }
+  #q:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  #q::placeholder { color: var(--muted); }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--line); border-radius: 10px;
+    margin: .5rem 0; overflow: hidden;
+  }
+  details details { border: none; border-top: 1px solid var(--line); border-radius: 0; margin: 0; background: transparent; }
+  summary {
+    cursor: pointer; padding: .55rem .8rem; list-style: none;
+    font: 600 .85rem var(--mono); letter-spacing: .01em;
+    display: flex; align-items: center; gap: .5rem; user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: "▸"; color: var(--accent); font-size: .75rem;
+    transition: transform .12s ease; display: inline-block;
+  }
+  details[open] > summary::before { transform: rotate(90deg); }
+  details details > summary { padding-left: 1.4rem; font-weight: 500; color: var(--muted); }
+  .cnt {
+    margin-left: auto; color: var(--muted); font-weight: 400; font-size: .72rem;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 0 .5rem;
+  }
+  .body { padding: 0 .8rem .3rem; }
+  details details > .body { padding-left: 1.4rem; }
+  ul { margin: .1rem 0 .5rem; padding: 0; list-style: none; }
+  li { padding: .12rem 0; }
+  li a {
+    color: var(--text); text-decoration: none;
+    border-bottom: 1px solid transparent; word-break: break-word;
+  }
+  li a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  li a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  mark { background: var(--accent); color: var(--bg); border-radius: 2px; }
+  footer { margin-top: 2rem; color: var(--muted); font: .72rem/1.6 var(--mono); }
+  footer a { color: var(--accent); }
+  .disclaimer {
+    margin-top: 1.2rem; padding: .9rem 1rem;
+    border: 1px solid var(--line); border-left: 3px solid var(--lan); border-radius: 8px;
+    background: var(--surface); color: var(--muted); font: .72rem/1.65 var(--mono);
+  }
+  .disclaimer strong { color: var(--text); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Linksammlung</h1>
+  <div class="meta">Stand 2026-07-06</div>
+  <input id="q" type="search" placeholder="filtern … (Titel / URL)" autocomplete="off" spellcheck="false">
+</header>
+
+<main id="tree">
+  <details open>
+    <summary>news<span class="cnt">3</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://phrack.org/">.:: Phrack Magazine ::.</a></li>
+        <li><a href="https://www.jpost.com/">The Jerusalem Post - All News from the Middle East, Israel, and the Jewish World</a></li>
+        <li><a href="https://www.timesofisrael.com/">The Times of Israel | News from Israel, the Middle East and the Jewish World</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Web<span class="cnt">1</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://www.customercontrolpanel.de/index.php">netcup ccp</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Cybersecurity<span class="cnt">91</span></summary>
+    <div class="body">
+      <details open>
+        <summary>01 - Information Gathering<span class="cnt">21</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://krebsonsecurity.com/">Krebs on Security</a></li>
+            <li><a href="https://thehackernews.com/">The Hacker News</a></li>
+            <li><a href="https://www.bleepingcomputer.com/">BleepingComputer</a></li>
+            <li><a href="https://www.linuxmaker.com/netzwerke/port-scanning/wichtigste-nmap-scans.html">Wichtigste Nmap-Scans</a></li>
+            <li><a href="https://notthehiddenwiki.com/">Not The Hidden Wiki</a></li>
+            <li><a href="https://github.com/notthehiddenwiki/NTHW">NTHW GitHub</a></li>
+          </ul>
+          <details open>
+            <summary>Mail<span class="cnt">4</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://toolbox.googleapps.com/apps/messageheader/">Nachrichtenheader</a></li>
+                <li><a href="https://mha.azurewebsites.net/">Message Header Analyzer</a></li>
+                <li><a href="https://mxtoolbox.com/EmailHeaders.aspx">MXToolbox Email Header Analyzer</a></li>
+                <li><a href="https://mxtoolbox.com/SuperTool.aspx">Network Tools: DNS,IP,Email</a></li>
+              </ul>
+            </div>
+          </details>
+          <details open>
+            <summary>URL<span class="cnt">7</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://ipinfo.io/">IP Data Intelligence for Developers &amp; Enterprises | IPinfo</a></li>
+                <li><a href="https://urlscan.io/">URL and website scanner - urlscan.io</a></li>
+                <li><a href="https://www.url2png.com/">URL2PNG - Screenshots as a Service</a></li>
+                <li><a href="https://www.wannabrowser.net/">Wannabrowser</a></li>
+                <li><a href="https://talosintelligence.com/reputation">Intelligence Center - A Real-Time Threat Detection Service || Cisco Talos Intelligence Group - Comprehensive Threat Intelligence</a></li>
+                <li><a href="https://www.whois.com/">Whois.com - Domain Names &amp; Identity for Everyone</a></li>
+                <li><a href="https://www.kali.org/tools/dirb/">dirb | Kali Linux Tools</a></li>
+              </ul>
+            </div>
+          </details>
+          <details open>
+            <summary>www<span class="cnt">3</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://search.censys.io/">Censys Search</a></li>
+                <li><a href="https://www.arin.net/">American Registry for Internet Numbers</a></li>
+                <li><a href="https://www.ripe.net/">Welcome to RIPE and the RIPE NCC — RIPE Network Coordination Centre</a></li>
+              </ul>
+            </div>
+          </details>
+          <ul>
+            <li><a href="https://www.threatminer.org/index.php">ThreatMiner.org | Data Mining for Threat Intelligence</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>02 - Vulnerability Analysis<span class="cnt">3</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">Known Exploited Vulnerabilities Catalog | CISA</a></li>
+            <li><a href="https://thedfirreport.com/">The DFIR Report</a></li>
+            <li><a href="https://www.exploit-db.com/">Exploit Database - Exploits for Penetration Testers, Researchers, and Ethical Hackers</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>03 - Web Application Analysis<span class="cnt">4</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.csselectronics.com/pages/uds-protocol-tutorial-unified-diagnostic-services">UDS Explained - A Simple Intro (Unified Diagnostic Services) – CSS Electronics</a></li>
+            <li><a href="https://www.wappalyzer.com/">Find out what websites are built with - Wappalyzer</a></li>
+            <li><a href="https://owasp.org/www-community/favicons_database">OWASP Favicon Database | OWASP Foundation</a></li>
+            <li><a href="https://crt.sh/">crt.sh | Certificate Search</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>06 - Wireless Attacks<span class="cnt">7</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.elektronik-kompendium.de/sites/net/2008051.htm">WLAN-Hacking: Monitor Mode</a></li>
+            <li><a href="https://uk.pcmag.com/raspberry-pi-zero-w/124259/wi-fi-hacking-is-easy-and-cheap-with-a-pi-zero-w">Wi-Fi Hacking Is Easy and Cheap With a Pi Zero W</a></li>
+            <li><a href="https://github.com/pentestfunctions/BlueDucky">BlueDucky (Bluetooth)</a></li>
+            <li><a href="https://www.nordicsemi.com/Products/Development-hardware/nRF52840-Dongle">nRF52840 Dongle (BLE)</a></li>
+            <li><a href="https://learn.adafruit.com/ble-sniffer-with-nrf52840/working-with-wireshark">Working with Wireshark | BLE Sniffer</a></li>
+            <li><a href="https://www.computerweekly.com/de/ratgeber/WLAN-Pentests-mit-EAPHammer-Fluxion-und-Wifite">WLAN-Pentests mit EAPHammer, Fluxion und Wifite | Computer Weekly</a></li>
+            <li><a href="https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html">D.2. tshark: Terminal-based Wireshark</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>07 - Reverse Engineering<span class="cnt">6</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://github.com/ReFirmLabs/binwalk">GitHub - ReFirmLabs/binwalk: Firmware Analysis Tool</a></li>
+            <li><a href="https://cryptii.com/pipes/caesar-cipher">Caesar cipher: Encode and decode online - cryptii</a></li>
+          </ul>
+          <details open>
+            <summary>hash<span class="cnt">3</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://crackstation.net/">CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.</a></li>
+                <li><a href="https://hashes.com/en/decrypt/hash">Decrypt MD5, SHA1, MySQL, NTLM, SHA256, MD5 Email, SHA256 Email, SHA512, Wordpress, Bcrypt hashes for free online</a></li>
+                <li><a href="https://hashcat.net/wiki/doku.php?id=example_hashes">example_hashes [hashcat wiki]</a></li>
+              </ul>
+            </div>
+          </details>
+          <ul>
+            <li><a href="https://app.any.run/">Interactive Online Malware Analysis Sandbox - ANY.RUN</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>08 - Exploitation Tools<span class="cnt">7</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://assume-breach.medium.com/building-the-ultimate-portable-hacking-suite-with-a-raspberry-pi-zero-w-dbc60704d872">Ultimate Portable Hacking Suite (Pi Zero W)</a></li>
+            <li><a href="https://github.com/CaringCaribou/caringcaribou">CaringCaribou (CAN bus)</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/Forkbomb#Python">Forkbomb – Wikipedia</a></li>
+            <li><a href="https://www.cyberciti.biz/faq/understanding-bash-fork-bomb/">Understanding Bash fork() Bomb</a></li>
+            <li><a href="https://www.geeksforgeeks.org/fork-bomb/">Fork Bomb (GeeksforGeeks)</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/Fork_(Unix)">Fork (Unix)</a></li>
+            <li><a href="https://hybrid-analysis.com/">Free Automated Malware Analysis Service - powered by Falcon Sandbox</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>10 - Post Exploitation<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://lolbas-project.github.io/#">LOLBAS (Win-Bordmittel)</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>11 - Forensics &amp; Malware<span class="cnt">4</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://ssdeep-project.github.io/ssdeep/index.html">ssdeep - Fuzzy hashing program</a></li>
+            <li><a href="https://bazaar.abuse.ch/">MalwareBazaar</a></li>
+            <li><a href="https://malshare.com/">MalShare</a></li>
+            <li><a href="https://tdm.socprime.com/signup">SOC Prime Platform</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>12 - Reporting Tools<span class="cnt">5</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://thedfirreport.com/">The DFIR Report – Real Intrusions by Real Attackers, The Truth Behind the Intrusion</a></li>
+            <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">Known Exploited Vulnerabilities Catalog | CISA</a></li>
+            <li><a href="https://www.bleepingcomputer.com/tag/supply-chain-attack/">Latest Supply Chain Attack news</a></li>
+            <li><a href="https://threatmap.checkpoint.com/">Live Cyber Threat Map | Check Point</a></li>
+            <li><a href="https://attack.mitre.org/">MITRE ATT&amp;CK®</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>13 - Social Engineering<span class="cnt">4</span></summary>
+        <div class="body">
+          <details open>
+            <summary>Phishing<span class="cnt">4</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://cheapsslsecurity.com/blog/10-phishing-email-examples-you-need-to-see/">10 Phishing Email Examples</a></li>
+                <li><a href="https://grcsolutions.io/5-ways-to-detect-a-phishing-email/">How to Spot a Phishing Email</a></li>
+                <li><a href="https://www.knowbe4.com/resource-center/phishing">Phishing | KnowBe4</a></li>
+                <li><a href="https://phishingquiz.withgoogle.com/">Google Phishing Quiz</a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      <details open>
+        <summary>15 - Filecheck<span class="cnt">6</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://talosintelligence.com/talos_file_reputation">Talos File Reputation Lookup || Cisco Talos Intelligence Group - Comprehensive Threat Intelligence</a></li>
+            <li><a href="https://app.any.run/">Interactive Online Malware Analysis Sandbox - ANY.RUN</a></li>
+            <li><a href="https://hybrid-analysis.com/">Free Automated Malware Analysis Service - powered by Falcon Sandbox</a></li>
+            <li><a href="https://www.joesecurity.org/">Deep Malware and Phishing Analysis - Joe Sandbox</a></li>
+            <li><a href="https://otx.alienvault.com/">LevelBlue - Open Threat Exchange</a></li>
+            <li><a href="https://www.virustotal.com/gui/home/upload">VirusTotal - Home</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>NotTheHiddenWiki<span class="cnt">2</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://github.com/notthehiddenwiki/NTHW">GitHub - notthehiddenwiki/NTHW: Not The Hidden Wiki - The largest repository of links related to cybersecurity</a></li>
+            <li><a href="https://notthehiddenwiki.com/">Not The Hidden Wiki</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>WiFi<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://uk.pcmag.com/raspberry-pi-zero-w/124259/wi-fi-hacking-is-easy-and-cheap-with-a-pi-zero-w">Wi-Fi Hacking Is Easy and Cheap With a Pi Zero W</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Info<span class="cnt">3</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://krebsonsecurity.com/">Krebs on Security – In-depth security news and investigation</a></li>
+            <li><a href="https://thehackernews.com/">The Hacker News | #1 Trusted Source for Cybersecurity News</a></li>
+            <li><a href="https://www.bleepingcomputer.com/">BleepingComputer | Cybersecurity, Technology News and Support</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Malware<span class="cnt">4</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://ssdeep-project.github.io/ssdeep/index.html">ssdeep - Fuzzy hashing program</a></li>
+            <li><a href="https://tdm.socprime.com/signup">SOC Prime Platform</a></li>
+            <li><a href="https://bazaar.abuse.ch/">MalwareBazaar | Malware sample exchange</a></li>
+            <li><a href="https://malshare.com/">MalShare</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Win-Bordmittel<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://lolbas-project.github.io/#">LOLBAS</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Bluetooth<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://github.com/pentestfunctions/BlueDucky">GitHub - pentestfunctions/BlueDucky: 🚨 CVE-2023-45866 - BlueDucky Implementation (Using DuckyScript) 🔓 Unauthenticated Peering Leading to Code Execution (Using HID Keyboard)</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Databases<span class="cnt">5</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://thedfirreport.com/">The DFIR Report – Real Intrusions by Real Attackers, The Truth Behind the Intrusion</a></li>
+            <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog">Known Exploited Vulnerabilities Catalog | CISA</a></li>
+            <li><a href="https://www.bleepingcomputer.com/tag/supply-chain-attack/">Latest Supply Chain Attack news</a></li>
+            <li><a href="https://threatmap.checkpoint.com/">Live Cyber Threat Map | Check Point</a></li>
+            <li><a href="https://attack.mitre.org/">MITRE ATT&amp;CK®</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Encryption<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://cryptii.com/pipes/caesar-cipher">Caesar cipher: Encode and decode online - cryptii</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>hash<span class="cnt">5</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://crackstation.net/">CrackStation - Online Password Hash Cracking - MD5, SHA1, Linux, Rainbow Tables, etc.</a></li>
+            <li><a href="https://hashes.com/en/decrypt/hash">Decrypt MD5, SHA1, MySQL, NTLM, SHA256, MD5 Email, SHA256 Email, SHA512, Wordpress, Bcrypt hashes for free online</a></li>
+            <li><a href="https://hashcat.net/wiki/doku.php?id=example_hashes">example_hashes [hashcat wiki]</a></li>
+            <li><a href="https://www.base64encode.org/">Base64 Encode and Decode - Online</a></li>
+            <li><a href="https://www.base64decode.org/">Base64 Decode and Encode - Online</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </details>
+  <details open>
+    <summary>OS + Software<span class="cnt">15</span></summary>
+    <div class="body">
+      <details open>
+        <summary>Einstellungen<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://duckduckgo.com/?t=ftsa&amp;q=atomuhr+satellit+gps&amp;ia=web">atomuhr satellit gps at DuckDuckGo</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Software<span class="cnt">1</span></summary>
+        <div class="body">
+          <details open>
+            <summary>Docker<span class="cnt">1</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://github.com/ReFirmLabs/binwalk/wiki/Building-A-Binwalk-Docker-Image">Building A Binwalk Docker Image · ReFirmLabs/binwalk Wiki · GitHub</a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      <details open>
+        <summary>Windows<span class="cnt">4</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://0xcybery.github.io/blog/Core-Processes-In-Windows-System">Core Processes In Windows System</a></li>
+            <li><a href="https://www.sans.org/posters/hunt-evil">Hunt Evil | SANS Institute</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/sysinternals/resources/windows-internals">Windows Internals Book - Sysinternals | Microsoft Learn</a></li>
+            <li><a href="https://www.gpg4win.de/">Gpg4win - Sichere E-Mail- und Datei-Verschlüsselung mit GnuPG für Windows</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Linux<span class="cnt">8</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.mikekasberg.com/blog/2024/05/20/dual-boot-ubuntu-24-04-and-windows-with-encryption.html">Dual-Boot Ubuntu 24.04+ &amp; Windows</a></li>
+            <li><a href="https://ubuntuforums.org/showthread.php?t=894295&amp;page=2&amp;p=5627660#post5627660">Disk cloning [ubuntu]</a></li>
+            <li><a href="https://askubuntu.com/questions/88885/how-to-copy-usb-stick-with-multiple-partitions">Copy usb stick with multiple partitions</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/MATE_Desktop_Environment">MATE Desktop Environment</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/Btrfs">Btrfs</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/Pluggable_Authentication_Modules">PAM (Pluggable Authentication Modules)</a></li>
+            <li><a href="https://de.wikipedia.org/wiki/Copy-On-Write">Copy-On-Write</a></li>
+            <li><a href="https://www.mikekasberg.com/blog/2024/05/20/dual-boot-ubuntu-24-04-and-windows-with-encryption.html">How to Dual-Boot Ubuntu 24.04+ and Windows (10 or 11) with Encryption · Mike Kasberg</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Hypervisor<span class="cnt">1</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.proxmox.com/en/">Proxmox - Powerful open-source server solutions</a></li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </details>
+  <details open>
+    <summary>Cybersecurity Training<span class="cnt">14</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://www.w3schools.com/">W3Schools Online Web Tutorials</a></li>
+        <li><a href="https://notthehiddenwiki.com/">Not The Hidden Wiki</a></li>
+        <li><a href="https://github.com/notthehiddenwiki/NTHW">NTHW GitHub</a></li>
+        <li><a href="https://www.gtb.de/der-certified-tester/probepruefungen/?_gl=1*padc4c*_up*MQ..*_ga*MTg3NDI1MzAzMy4xNzQyODA3MTEx*_ga_5QDPMRKJLT*MTc0MjgwNzExMC4xLjAuMTc0MjgwNzExMC4wLjAuMA..">ISTQB Probeprüfungen - German Testing Board</a></li>
+        <li><a href="https://tryhackme.com/room/introtosiem">TryHackMe | Introduction to SIEM_1</a></li>
+        <li><a href="https://tryhackme.com/room/splunk101">TryHackMe | Splunk: The Basics_2</a></li>
+        <li><a href="https://tryhackme.com/room/investigatingwithsplunk">TryHackMe | Investigating with Splunk</a></li>
+        <li><a href="https://tryhackme.com/room/investigatingwithelk101">TryHackMe | Elastic Stack: The Basics</a></li>
+        <li><a href="https://tryhackme.com/room/itsybitsy">TryHackMe | ItsyBitsy</a></li>
+        <li><a href="https://tryhackme.com/room/splunkexploringspl">TryHackMe | Splunk: Exploring SPL</a></li>
+        <li><a href="https://tryhackme.com/room/posheclipse">TryHackMe | PS Eclipse</a></li>
+        <li><a href="https://tryhackme.com/room/splunkexploringspl">TryHackMe | Splunk</a></li>
+        <li><a href="https://www.heise.de/select/ct/archiv/2025">Artikel-Archiv | c&#x27;t 2025 | heise magazine</a></li>
+        <li><a href="https://security.szurek.pl/en/burp-12-tricks-for-burp-repeater/">12 tricks for Burp Repeater - security.szurek.pl</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Hardware &amp; IoT<span class="cnt">11</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://de.canopen-lift.org/wiki/CANopen-Stecker_9-Pin_D-Sub">CANopen-Stecker 9-Pin D-Sub</a></li>
+      </ul>
+      <details open>
+        <summary>OpenWRT<span class="cnt">2</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://openwrt.org/">[OpenWrt Wiki] Welcome to the OpenWrt Project</a></li>
+            <li><a href="https://docs.banana-pi.org/en/OpenWRT-One/BananaPi_OpenWRT-One">Banana Pi OpenWrt One Router | BananaPi Docs</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Gadgets<span class="cnt">3</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://www.heise.de/tests/Hacking-Gadget-im-Test-Lilygo-T-Embed-CC1101-10316111.html">Hacking-Gadget im Test: Lilygo T-Embed CC1101 | heise online</a></li>
+            <li><a href="https://capibarazero.com/">CapibaraZero docs | CapibaraZero</a></li>
+            <li><a href="https://bruce.computer/flasher">Bruce Web Flasher</a></li>
+          </ul>
+        </div>
+      </details>
+      <details open>
+        <summary>Projekte<span class="cnt">4</span></summary>
+        <div class="body">
+          <ul>
+            <li><a href="https://sensor.community/de/sensors/airrohr/">Baue Deinen eigenen Feinstaubsensor.</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JXxGwSLLAGs">How To Make Your Own Raspberry Pi Security Camera - YouTube</a></li>
+            <li><a href="https://github.com/motioneye-project/motioneyeos/wiki">Home · motioneye-project/motioneyeos Wiki · GitHub</a></li>
+          </ul>
+          <details open>
+            <summary>Pi-Hole<span class="cnt">1</span></summary>
+            <div class="body">
+              <ul>
+                <li><a href="https://firebog.net/">Blocklist Collection ¦ Firebog</a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </details>
+      <ul>
+        <li><a href="https://www.google.com/search?client=firefox-b-e&amp;q=ubertooth">ubertooth - Google Suche</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Finanzen &amp; Krypto<span class="cnt">3</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://de.wikipedia.org/wiki/Litecoin">Litecoin – Wikipedia</a></li>
+        <li><a href="https://www.zinsen-berechnen.de/">Zinsen-berechnen.de</a></li>
+        <li><a href="https://www.verivox.de/tagesgeld/">Tagesgeld-Vergleich 05/2026 » 3,50 % Zinsen fürs Tagesgeldkonto</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Browser &amp; Tools<span class="cnt">1</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://archive.ph/">Webpage archive</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>AI<span class="cnt">3</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://chatgpt.com/auth/login">ChatGPT</a></li>
+        <li><a href="https://www.youtube.com/watch?si=zWkJmJfGzcduOoLl&amp;v=7hP4YyScNrE&amp;feature=youtu.be">LLM Auto Pentester – Autonomous Penetration Testing using Large Language Models - YouTube</a></li>
+        <li><a href="https://huggingface.co/">Hugging Face – The AI community building the future.</a></li>
+      </ul>
+    </div>
+  </details>
+  <details open>
+    <summary>Simson<span class="cnt">3</span></summary>
+    <div class="body">
+      <ul>
+        <li><a href="https://zt-tuning.de/">Simson Tuning, Simson Ersatzteile und Simson Tuning Zylinder</a></li>
+        <li><a href="https://rh-zweiradtechnik.de/">Simson Motor regenerieren - Motorüberholung S51 S50 Schwalbe Star SR50</a></li>
+        <li><a href="https://zeitmaschinen-shop.de/">Simson &amp; MZ Teile online kaufen – Zeitmaschinen-Shop.de</a></li>
+      </ul>
+    </div>
+  </details>
+</main>
+
+<footer>
+
+  <div class="disclaimer">
+    <strong>Rechtlicher Hinweis / Disclaimer.</strong>
+    Diese Sammlung ist eine private Lesezeichenliste und dient ausschließlich beruflichen, wissenschaftlichen
+    und Bildungszwecken im Bereich der IT-Sicherheit. Sie verweist auf Werkzeuge, Dienste und
+    Informationsangebote Dritter, auf deren Inhalte ich keinen Einfluss habe und für die ich keine Haftung
+    übernehme; für die Inhalte der verlinkten Seiten ist ausschließlich deren jeweiliger Anbieter verantwortlich.
+    Die Aufnahme eines Links ist keine Empfehlung, Billigung oder Aufforderung zu dessen Nutzung.
+    Der Einsatz sicherheitsrelevanter Werkzeuge ist ausschließlich im gesetzlich zulässigen Rahmen und nur an
+    eigenen oder ausdrücklich vom Berechtigten autorisierten Systemen zulässig. Unbefugter Zugriff auf fremde
+    Systeme oder Daten ist strafbar (u.&nbsp;a. §§&nbsp;202a&nbsp;ff., 303a&nbsp;f. StGB). Für eine rechtswidrige
+    Nutzung durch Dritte wird keine Verantwortung übernommen.
+  </div>
+</footer>
+</div>
+
+<!-- ===== Optionaler Filter. Kompletter <script>-Block löschbar, ohne die Links zu berühren. ===== -->
+<script>
+(function () {
+  var q = document.getElementById('q'), tree = document.getElementById('tree');
+  var items = [].slice.call(tree.querySelectorAll('li'));
+  var details = [].slice.call(tree.querySelectorAll('details'));
+  var openState = null;
+
+  function clearMarks(li) {
+    li.querySelectorAll('mark').forEach(function (m) {
+      m.replaceWith(document.createTextNode(m.textContent));
+    });
+    li.normalize();
+  }
+
+  q.addEventListener('input', function () {
+    var term = q.value.trim().toLowerCase();
+    if (openState === null) openState = details.map(function (d) { return d.open; });
+
+    if (!term) {
+      items.forEach(function (li) { li.style.display = ''; clearMarks(li); });
+      details.forEach(function (d, i) { d.style.display = ''; d.open = openState[i]; });
+      openState = null;
+      return;
+    }
+    items.forEach(function (li) {
+      var a = li.querySelector('a');
+      var hay = (a.textContent + ' ' + a.getAttribute('href')).toLowerCase();
+      var hit = hay.indexOf(term) !== -1;
+      li.style.display = hit ? '' : 'none';
+      clearMarks(li);
+      if (hit) {
+        var txt = a.textContent, idx = txt.toLowerCase().indexOf(term);
+        if (idx !== -1) {
+          var mk = document.createElement('mark');
+          mk.textContent = txt.substr(idx, term.length);
+          a.textContent = '';
+          a.append(txt.substr(0, idx), mk, txt.substr(idx + term.length));
+        }
+      }
+    });
+    details.forEach(function (d) {
+      var anyVisible = [].slice.call(d.querySelectorAll('li')).some(function (li) { return li.style.display !== 'none'; });
+      d.style.display = anyVisible ? '' : 'none';
+      d.open = anyVisible;
+    });
+  });
+})();
+</script>
+</body>
+</html>

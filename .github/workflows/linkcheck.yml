@@ -1,0 +1,43 @@
+# Prueft alle Links und legt bei Problemen ein GitHub-Issue mit Begruendung an.
+# Ablage im Repo:  .github/workflows/linkcheck.yml
+name: Linkcheck (Report als Issue)
+
+on:
+  push:
+    paths: ["**/*.html"]     # laeuft, sobald irgendeine HTML-Datei geaendert wird
+  workflow_dispatch:         # manuell ausloesbar (Reiter Actions -> Run workflow)
+  schedule:
+    - cron: "0 6 * * 1"      # zusaetzlich montags 06:00 UTC
+
+permissions:
+  contents: read
+  issues: write              # noetig, um das Issue anzulegen
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # Debug: zeigt im Log, wo die HTML-Datei(en) tatsaechlich liegen.
+      # Kann spaeter geloescht werden, stoert aber nicht.
+      - name: HTML-Dateien im Repo anzeigen
+        run: find . -type f -name '*.html' -not -path './.git/*'
+
+      - name: Lychee
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # '**/*.html' = jede HTML-Datei in jedem Unterordner. lychee loest den
+          # Platzhalter selbst auf -> deshalb die einfachen Anfuehrungszeichen.
+          # 403/429 sind meist Bot-Sperren, nicht "kaputt" -> als ok akzeptieren.
+          args: "--no-progress --max-retries 2 --timeout 20 --accept 200,206,301,302,307,308,403,429 '**/*.html'"
+          fail: false        # Lauf nicht rot faerben, nur berichten
+
+      - name: Issue bei defekten Links
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Linkcheck: defekte Links gefunden"
+          content-filepath: ./lychee/out.md
+          labels: linkcheck
