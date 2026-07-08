@@ -17,7 +17,7 @@ jobs:
   links:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd
 
       # Debug: zeigt im Log, wo die HTML-Datei(en) tatsaechlich liegen.
       # Kann spaeter geloescht werden, stoert aber nicht.
@@ -26,7 +26,7 @@ jobs:
 
       - name: Lychee
         id: lychee
-        uses: lycheeverse/lychee-action@v2
+        uses: lycheeverse/lychee-action@8646ba30535128ac92d33dfc9133794bfdd9b411
         with:
           # '**/*.html' = jede HTML-Datei in jedem Unterordner. lychee loest den
           # Platzhalter selbst auf -> deshalb die einfachen Anfuehrungszeichen.
@@ -36,7 +36,7 @@ jobs:
 
       - name: Issue bei defekten Links
         if: steps.lychee.outputs.exit_code != 0
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@e8ef132d6df98ed982188e460ebb3b5d4ef3a9cd
         with:
           title: "Linkcheck: defekte Links gefunden"
           content-filepath: ./lychee/out.md
