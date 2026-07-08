@@ -1,0 +1,34 @@
+# .claudeignore — public-notes
+# Steuert, was Claude Code NICHT in den Kontext liest (an die API sendet).
+# Syntax wie .gitignore.
+
+# --- Secrets & Zugangsdaten (niemals in den Kontext) ---
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_ed25519
+id_*
+secrets/
+**/credentials*
+**/*secret*
+
+# --- Abhängigkeiten & Build-Artefakte ---
+node_modules/
+dist/
+build/
+_site/
+
+# --- Caches ---
+.lycheecache
+.cache/
+
+# --- OS- & Editor-Kruscht ---
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# --- Git-Interna ---
+.git/
