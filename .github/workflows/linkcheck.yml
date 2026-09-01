@@ -41,3 +41,21 @@ jobs:
           title: "Linkcheck: defekte Links gefunden"
           content-filepath: ./lychee/out.md
           labels: linkcheck
+
+  # Haelt den Zeitplan am Leben: GitHub schaltet cron-Trigger in oeffentlichen
+  # Repos ab, sobald 60 Tage lang keine Repo-Aktivitaet stattgefunden hat --
+  # die geplanten Laeufe selbst zaehlen dabei nicht mit. Ein erzwungenes
+  # "enable" ueber die API setzt den Inaktivitaetszaehler des Workflows
+  # zurueck, ohne dafuer woechentlich Leer-Commits in die Historie zu schreiben.
+  keepalive:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write           # noetig fuer den enable-Endpunkt
+    steps:
+      - name: Inaktivitaetszaehler zuruecksetzen
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method PUT \
+            "repos/${{ github.repository }}/actions/workflows/linkcheck.yml/enable"

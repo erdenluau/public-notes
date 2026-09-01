@@ -37,6 +37,10 @@ Festes Ordnergerüst (identisch mit dem privaten `wissen`-Repo):
 - Den Workflow unter `.github/workflows/` **nicht umbenennen und nicht in seiner
   Struktur brechen**. Änderungen an der lychee-Konfiguration nur gezielt und mit
   kurzer Begründung im Commit.
+- Der Job `keepalive` in `linkcheck.yml` ist kein Beiwerk: GitHub schaltet cron-Trigger
+  in oeffentlichen Repos nach 60 Tagen ohne Repo-Aktivitaet ab, und die geplanten Laeufe
+  selbst zaehlen nicht als Aktivitaet. Der Job setzt den Zaehler per Actions-API zurueck.
+  Nicht entfernen, sonst schlaeft die woechentliche Pruefung irgendwann kommentarlos ein.
 - Als tot gemeldete Links **nicht stillschweigend entfernen** — erst kennzeichnen bzw.
   nachfragen. Hinter der Sammlung steht eine rechtliche Prüfung der Links nach
   deutschem Recht.
